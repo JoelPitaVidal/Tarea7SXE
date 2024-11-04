@@ -49,7 +49,7 @@ volumes:
 
 1. Actualizamos el archivo `docker-compose.yml` para incluir el servicio phpMyAdmin:
 
-    ```yaml
+```yaml
 services:
   joomla:
     image: joomla
