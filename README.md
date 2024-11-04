@@ -50,7 +50,6 @@ volumes:
 1. Actualizamos el archivo `docker-compose.yml` para incluir el servicio phpMyAdmin:
 
     ```yaml
-
 services:
   joomla:
     image: joomla
@@ -84,7 +83,8 @@ services:
 volumes:
   joomla_data:
   db_data:
-    ```
+  
+```
 
 2. Ejecutamos `docker-compose up -d` para levantar los servicios.
 3. Accedemos a phpMyAdmin en [http://localhost:8081](http://localhost:8081).
