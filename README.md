@@ -8,11 +8,9 @@
 
 ### Parte 1: Configuración de Joomla y MySQL
 
-1. Crea un archivo `docker-compose.yml` con el siguiente contenido:
+1. Creamos un archivo `docker-compose.yml` con el siguiente contenido:
 
     ```yaml
-    version: '3.7'
-
     services:
       joomla:
         image: joomla
@@ -40,16 +38,14 @@
       db_data:
     ```
 
-2. Ejecuta `docker-compose up -d` para levantar los servicios.
-3. Accede a Joomla en [http://localhost:8080](http://localhost:8080).
+2. Ejecutamos `docker-compose up -d` para levantar los servicios.
+3. Accedemos a Joomla en [http://localhost:8080](http://localhost:8080).
 
 ### Parte 2: Añadir phpMyAdmin
 
-1. Actualiza el archivo `docker-compose.yml` para incluir el servicio phpMyAdmin:
+1. Actualizamos el archivo `docker-compose.yml` para incluir el servicio phpMyAdmin:
 
     ```yaml
-    version: '3.7'
-
     services:
       joomla:
         image: joomla
@@ -85,8 +81,8 @@
       db_data:
     ```
 
-2. Ejecuta `docker-compose up -d` para levantar los servicios.
-3. Accede a phpMyAdmin en [http://localhost:8081](http://localhost:8081).
+2. Ejecutamos `docker-compose up -d` para levantar los servicios.
+3. Accedemos a phpMyAdmin en [http://localhost:8081](http://localhost:8081).
 
 ## Explicación de la configuración
 
