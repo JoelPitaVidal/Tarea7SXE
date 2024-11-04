@@ -23,7 +23,7 @@ services:
   phpmyadmin: # Define el servicio llamado "phpmyadmin".
     image: phpmyadmin/phpmyadmin # Usa la imagen oficial de phpMyAdmin.
     ports:
-      - "8081:80" # Mapea el puerto 8081 del host al puerto 80 del contenedor.
+      - "8080:80" # Mapea el puerto 8080 del host al puerto 80 del contenedor.
     environment: # Establece variables de entorno necesarias para phpMyAdmin.
       PMA_HOST: db # Indica el host de la base de datos (el servicio "db").
       MYSQL_ROOT_PASSWORD: example # Contraseña del usuario root de MySQL.
