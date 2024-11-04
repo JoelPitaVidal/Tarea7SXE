@@ -1,5 +1,3 @@
-version: '3.7' # Especifica la versión de la sintaxis de Docker Compose a utilizar.
-
 services:
   joomla: # Define el servicio llamado "joomla".
     image: joomla # Usa la imagen oficial de Joomla.
