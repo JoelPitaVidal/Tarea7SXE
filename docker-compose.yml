@@ -12,7 +12,7 @@ services:
       - joomla_data:/var/www/html # Define un volumen persistente para los datos de Joomla.
 
   db: # Define el servicio llamado "db".
-    image: mysql:5.7 # Usa la imagen oficial de MySQL versión 5.7.
+    image: mysql:8.0.13 # Usa la imagen oficial de MySQL versión 5.7.
     command: --default-authentication-plugin=mysql_native_password # Configuración adicional para MySQL.
     environment: # Establece variables de entorno necesarias para MySQL.
       MYSQL_ROOT_PASSWORD: example # Contraseña del usuario root de MySQL.
