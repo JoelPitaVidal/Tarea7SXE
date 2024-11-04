@@ -28,7 +28,7 @@ services:
       - joomla_data:/var/www/html
 
   db:
-    image: mysql:5.7
+    image: mysql:8.0.13
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: example
@@ -64,7 +64,7 @@ services:
       - joomla_data:/var/www/html
 
   db:
-    image: mysql:5.7
+    image: mysql:8.0.13
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: example
