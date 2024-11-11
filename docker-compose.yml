@@ -1,35 +1,35 @@
 services:
-  joomla: # Define el servicio llamado "joomla".
-    image: joomla # Usa la imagen oficial de Joomla.
-    ports:
-      - "8080:80" # Mapea el puerto 8080 del host al puerto 80 del contenedor.
-    environment: # Establece variables de entorno necesarias para Joomla.
-      JOOMLA_DB_HOST: db # Indica el host de la base de datos (el servicio "db").
-      JOOMLA_DB_USER: root # Nombre de usuario de la base de datos.
-      JOOMLA_DB_PASSWORD: example # Contraseña del usuario de la base de datos.
-      JOOMLA_DB_NAME: joomla # Nombre de la base de datos.
-    volumes:
-      - joomla_data:/var/www/html # Define un volumen persistente para los datos de Joomla.
-
-  db: # Define el servicio llamado "db".
-    image: mysql:8.0.13 # Usa la imagen oficial de MySQL versión 5.7.
-    command: --default-authentication-plugin=mysql_native_password # Configuración adicional para MySQL.
-    environment: # Establece variables de entorno necesarias para MySQL.
-      MYSQL_ROOT_PASSWORD: example # Contraseña del usuario root de MySQL.
-      MYSQL_DATABASE: joomla # Crea una base de datos llamada "joomla".
-    volumes:
-      - db_data:/var/lib/mysql # Define un volumen persistente para los datos de MySQL.
-
-  phpmyadmin: # Define el servicio llamado "phpmyadmin".
-    image: phpmyadmin/phpmyadmin # Usa la imagen oficial de phpMyAdmin.
-    ports:
-      - "8080:80" # Mapea el puerto 8080 del host al puerto 80 del contenedor.
-    environment: # Establece variables de entorno necesarias para phpMyAdmin.
-      PMA_HOST: db # Indica el host de la base de datos (el servicio "db").
-      MYSQL_ROOT_PASSWORD: example # Contraseña del usuario root de MySQL.
-
-volumes:
-  joomla_data: # Define un volumen llamado "joomla_data" para persistencia de datos de Joomla.
-  db_data: # Define un volumen llamado "db_data" para persistencia de datos de MySQL.
+    Joomla:
+        image: joomla
+        restart: always
+        ports:
+            - 8080:80
+        environment:
+            JOOMLA_DB_HOST: db
+            JOOMLA_DB_USER: joomla
+            JOOMLA_DB_PASSWORD: 1234
+            JOOMLA_DB_NAME: joomla_db
+            JOOMLA_SITE_NAME: Joomla
+            JOOMLA_ADMIN_USER: Joomla
+            JOOMLA_ADMIN_USERNAME: joomla
+            JOOMLA_ADMIN_PASSWORD: joomla@secured
+            JOOMLA_ADMIN_EMAIL: joomla@example.com
+    
+    db:
+        image: mysql:8.0
+        restart: always
+        environment:
+            MYSQL_DATABASE: joomla_db
+            MYSQL_USER: joomla
+            MYSQL_PASSWORD: 1234
+            MYSQL_RANDOM_ROOT_PASSWORD: '1234'
+        
+    phpMyAdmin:
+        image: phpmyadmin
+        restart: always
+        ports:
+            - 8081:80
+        environment:
+            - PMA_ARBITRARY = 1
 
 
